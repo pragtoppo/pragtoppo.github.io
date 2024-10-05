@@ -1,58 +1,46 @@
 :root {
   /* variables */
-  --cg-black: rgb(30, 32, 32); /* Keep black as is or change if needed */
+  --cg-black: rgb(30, 32, 32);
   --cg-purple: rgb(200, 162, 200); /* Lilac */
   --cg-lavender: rgb(230, 230, 250); /* Lavender */
-  --cg-grey: rgb(243, 243, 243); /* You may keep grey or adjust it */
+  --cg-grey: rgb(243, 243, 243);
   --cg-white: rgb(255, 255, 255);
 }
 
-html {
+html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
+/* Body styling */
 body {
-  background: var(--cg-lavender); /* Change background to lavender */
+  background: var(--cg-lavender); /* Lavender background */
+  font-family: monospace;
   position: relative;
   min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  font-family: monospace;
 }
 
-/* CSS for navigation */
-
+/* Navigation Header */
 .navbar {
-  position: flex;
-  position: sticky;
-  align-items: center;
-  top: 0;
-  width: 100%;
-  height: 7%;
-  z-index: 10;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
-
-  background-color: var(--cg-purple); /* Change navbar background to lilac */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 7%; /* Adjust height as needed */
+  z-index: 10;
+  background-color: var(--cg-purple); /* Lilac header */
   color: var(--cg-white);
-  padding: 0px 0px;
-
-  /* Debug border */
-  /* border: solid red; */
+  padding: 0 20px;
 }
 
 .nav-list {
   display: flex;
   flex-direction: row;
-  position: relative;
-  right: 30px;
   list-style: none;
-
-  /* Debug border */
-  /* border: solid blue; */
+  margin-right: 30px;
 }
 
 .navbar a {
@@ -61,17 +49,12 @@ body {
   margin: 0 12px;
   text-decoration: none;
   letter-spacing: 2px;
-
   font-family: monospace;
 }
 
 .navbar a:hover {
-  color: var(--cg-black); /* Change hover color to black for contrast */
+  color: var(--cg-black);
   text-decoration: underline;
-}
-
-.navbar a:active {
-  color: var(--cg-black); /* Change active link color to black for contrast */
 }
 
 .logo a {
@@ -79,9 +62,10 @@ body {
 }
 
 .logo a:hover {
-  text-decoration: None;
+  text-decoration: none;
 }
 
+/* Main content */
 main {
   padding: 0 20px 40px 20px;
   display: flex;
@@ -97,42 +81,39 @@ main {
   font-family: Georgia;
 }
 
-/* CSS for portfolio grid */
+/* Portfolio grid */
 .project {
   display: flex;
   flex-direction: row;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
+  justify-content: center;
+  align-items: center;
   max-width: 100%;
   margin: 1em 0 2em 0;
 }
 
 .project-image {
   object-fit: cover;
-  width: 50%; /* Adjust the width to balance with text */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 2%; /* Optional space between image and text */
+  width: 50%; /* Balance width with text */
+  height: auto;
+  margin-right: 2%;
 }
 
 .project-details {
   display: flex;
   background-color: var(--cg-white);
-  width: 40%; /* Adjust the width */
+  width: 40%;
   padding: 0 20px;
   line-height: 1.5;
   flex-direction: column;
   text-align: center;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
 }
 
-.project-details p,
-.project-details a {
+.project-details p, .project-details a {
   margin: 10px 0;
 }
 
-
-/* CSS for home page */
-
+/* About section */
 .about {
   display: flex;
   align-items: center;
@@ -141,13 +122,11 @@ main {
   background-color: #f8f8f8;
   border: 1px solid #ccc;
   border-radius: 5px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 .about-image img {
   max-width: 300px;
   border-radius: 3px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
 }
 
 .about-text {
@@ -165,40 +144,16 @@ main {
   line-height: 1.5;
 }
 
-/* CSS for resume page */
-
-.button {
-  background-color: var(--cg-black);
-  border: none;
-  color: var(--cg-white);
-
-  font-family: monospace;
-
-  padding: 5px 7px;
-  text-align: center;
-
-  border-radius: 2px;
-}
-
-.button:hover {
-  background-color: var(--cg-purple); /* Change button hover color to lilac */
-}
-
-.resume h2 {
-  font-family: Georgia;
-}
-
-
-/* CSS for contact form */
+/* Contact form */
 .contact-section {
-  padding: 50px 20px; /* Add top and side padding */
+  padding: 50px 20px;
   text-align: center;
 }
 
 .contact-section h1 {
   font-family: Georgia, serif;
   font-size: 28px;
-  margin-bottom: 30px; /* Add space between header and form */
+  margin-bottom: 30px;
 }
 
 label {
@@ -208,9 +163,7 @@ label {
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+input[type="text"], input[type="email"], textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -219,25 +172,108 @@ textarea {
   font-size: 16px;
 }
 
-/* Center the form and add spacing */
 form {
   width: 500px;
   margin: 0 auto;
-  padding: 20px; /* Add padding around the form */
-  background-color: #f9f9f9; /* Optional background for the form */
-  border-radius: 8px; /* Optional rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* CSS for footer */
+/* Submit button styling */
+input[type="submit"] {
+  background-color: var(--cg-black); /* Lilac background */
+  color: var(--cg-white);
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
+input[type="submit"]:hover {
+  background-color: var(--cg-black); /* Darker hover color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"]:active {
+  transform: scale(0.98); /* Slight scale down when clicked */
+}
+
+/* Resume section */
+.button {
+  background-color: var(--cg-black); /* Button background color */
+  border: none; /* Remove default border */
+  color: var(--cg-white); /* Text color */
+  font-family: monospace; /* Font family */
+  font-size: 16px; /* Adjust font size */
+  padding: 10px 20px; /* Increase padding for a larger button */
+  text-align: center; /* Center the text */
+  border-radius: 5px; /* Rounded corners */
+  margin-top: 20px; /* Spacing above the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  
+  /* Optional shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Smooth transition on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.button:hover {
+  background-color: var(--cg-purple); /* Hover color */
+  transform: translateY(-3px); /* Slight raise effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow depth on hover */
+}
+
+/* Active (pressed) state */
+.button:active {
+  background-color: var(--cg-blue); /* Button pressed color */
+  transform: translateY(0); /* Reset transform */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduce shadow depth when pressed */
+}
+
+/* Blog */
+.blog-header {
+  text-align: center;
+  margin: 50px 0 30px 0;
+}
+
+.blog-header h2 {
+  font-family: Georgia, serif;
+  font-size: 36px;
+  color: var(--cg-black);
+}
+
+/* Image container */
+.blog-filler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+/* Footer */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  background-color: var(--cg-black); /* Keep black for footer or change if needed */
+  width: 100%; /* Ensure footer covers entire width */
+  background-color: var(--cg-purple); /* Lilac footer */
   color: var(--cg-white);
   text-align: center;
   padding: 10px 0;
+}
+
+.footer a {
+  color: var(--cg-white);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--cg-black); /* Contrast hover color */
 }
